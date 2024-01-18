@@ -1,6 +1,6 @@
 // App.js
 import React from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom'; // Importa BrowserRouter, Routes y Route
+import { BrowserRouter, Router, Routes, Route } from 'react-router-dom'; // Importa BrowserRouter, Routes y Route
 
 
 
@@ -10,18 +10,14 @@ import InicioSesionUsuario from './components/InicioSesionUsuario'; // Asegúrat
 
 function App() {
   return (
-    <Router>
+    <div className='App'>
       <Routes>
-             <div className="App">
-        <Menu />
-        <div>
-          <Route path="/registro" component={RegistroUsuario} />
-          <Route path="/inicio-sesion" component={InicioSesionUsuario} />
-        </div>
-      </div>
+
+        <Route path="/" element={<InicioSesionUsuario />} />
+        <Route path="/registro" element={<RegistroUsuario />} />
+        <Route path="/inicio-sesion" element={<InicioSesionUsuario />} />
       </Routes>
- 
-    </Router>
+    </div>
     
   );
 }
